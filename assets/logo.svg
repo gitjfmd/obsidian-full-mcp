@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="gemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9F67FF"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#A78BFA" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Crystal / Gem shape (Obsidian identity) -->
+  <g transform="translate(50, 60)">
+    <!-- Gem facets -->
+    <polygon points="0,-32 -20,-8 0,36 20,-8" fill="url(#gemGrad)" opacity="0.95"/>
+    <polygon points="0,-32 -20,-8 0,-2" fill="#9F67FF" opacity="0.7"/>
+    <polygon points="0,-32 20,-8 0,-2" fill="#6D28D9" opacity="0.8"/>
+    <polygon points="-20,-8 0,36 0,-2" fill="#7C3AED" opacity="0.6"/>
+    <polygon points="20,-8 0,36 0,-2" fill="#5B21B6" opacity="0.7"/>
+    <!-- Gem outline -->
+    <polygon points="0,-32 -20,-8 0,36 20,-8" fill="none" stroke="#A78BFA" stroke-width="1.2" opacity="0.8"/>
+    <line x1="0" y1="-32" x2="0" y2="-2" stroke="#A78BFA" stroke-width="0.6" opacity="0.5"/>
+    <line x1="-20" y1="-8" x2="0" y2="-2" stroke="#A78BFA" stroke-width="0.6" opacity="0.5"/>
+    <line x1="20" y1="-8" x2="0" y2="-2" stroke="#A78BFA" stroke-width="0.6" opacity="0.5"/>
+    <line x1="0" y1="-2" x2="0" y2="36" stroke="#A78BFA" stroke-width="0.6" opacity="0.3"/>
+  </g>
+
+  <!-- MCP protocol nodes and connections -->
+  <g filter="url(#softGlow)">
+    <!-- Connection lines (protocol aesthetic) -->
+    <line x1="70" y1="38" x2="88" y2="30" stroke="url(#lineGrad)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="70" y1="60" x2="88" y2="60" stroke="url(#lineGrad)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="70" y1="82" x2="88" y2="90" stroke="url(#lineGrad)" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Protocol nodes -->
+    <circle cx="93" cy="28" r="4" fill="url(#nodeGrad)" opacity="0.9"/>
+    <circle cx="93" cy="60" r="4" fill="url(#nodeGrad)" opacity="0.9"/>
+    <circle cx="93" cy="92" r="4" fill="url(#nodeGrad)" opacity="0.9"/>
+
+    <!-- Outer connection hints -->
+    <line x1="97" y1="28" x2="108" y2="28" stroke="#A78BFA" stroke-width="1" opacity="0.4" stroke-dasharray="2,3"/>
+    <line x1="97" y1="60" x2="108" y2="60" stroke="#A78BFA" stroke-width="1" opacity="0.4" stroke-dasharray="2,3"/>
+    <line x1="97" y1="92" x2="108" y2="92" stroke="#A78BFA" stroke-width="1" opacity="0.4" stroke-dasharray="2,3"/>
+  </g>
+
+  <!-- Text: "obsidian" -->
+  <text x="122" y="55" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#E9E0FF" letter-spacing="0.5">obsidian</text>
+
+  <!-- Text: "-full-mcp" -->
+  <text x="276" y="55" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="28" font-weight="300" fill="#A78BFA" letter-spacing="0.5">-full-mcp</text>
+
+  <!-- Subtitle -->
+  <text x="122" y="78" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#8B7FB8" letter-spacing="2">FULL VAULT ACCESS VIA MCP</text>
+</svg>
